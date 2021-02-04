@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset=utf-8 />
+<title>Return first and last name from a form -    </title>
+</head>
+<body style="border:2px solid black;padding:15px;width:25%">
+<script>
+function getFormValue() 
+{  
+ var t=document.getElementById("time").value;
+ var p=document.getElementById("pa").value;
+ var r=document.getElementById("rate").value;
+ var s=p*t*(r/100);
+document.getElementById("si").value=s;
+   
+}
+</script>
+<p>Input principle amount,Radius ,time  and get value of simple intrest</p>
+<form id="form1" onsubmit="getFormValue()">
+Principle Amount <br><input type="text" name="pa" id="pa" value=""><br>
+Time  <br><input type="text" name="time" id="time" value=""><br>
+Rate of Intrest  <br><input type="text" name="rate" id="rate" value=""><br>
+Simple Intrest  <br><input type="text" name="si" id="si" value=""><br><br>
+<input type="BUTTON" value="Calculate" onclick="getFormValue()">
+</form>
+</body>
+</html>

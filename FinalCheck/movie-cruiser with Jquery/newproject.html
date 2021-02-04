@@ -1,0 +1,333 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>PVP Cineplex</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      
+        function validateFormregister()
+        {
+            var password = document.getElementById("password") , confirm_password = document.getElementById("confirm_password");
+            if (password.value != confirm_password.value)
+            {
+                    alert("passwords donot match");
+            }
+            var a = document.forms["register"]["name"].value;
+            var b = document.forms["register"]["uname"].value;
+            var c = document.forms["register"]["psw"].value;
+            var d = document.forms["register"]["email"].value;
+            var e = document.forms["register"]["city"].value;
+            var users = [a, b, c, d, e, "Customer"];
+            localStorage.setItem(b, JSON.stringify(users));
+        }
+        
+        function validateFormlogin() {
+            var x = document.forms["login"]["uname"].value;
+            var y = document.forms["login"]["psw"].value;
+            var retrievedData = localStorage.getItem(x);
+            var loginuser = JSON.parse(retrievedData);
+
+            if (loginuser == null) {
+                alert("Invalid Credentials");
+                return false;
+            }
+
+            if (loginuser[2] != y) {
+                alert("Invalid Password");
+                return false;
+            }
+
+            if (loginuser[1] == x && loginuser[2] == y && loginuser[5] == "admin") {
+                event.preventDefault();
+                window.location.href = "movie-list-admin.html";
+                return false;
+
+            }
+            if (loginuser[1] == x && loginuser[2] == y && loginuser[5] == "Customer") {
+                event.preventDefault();
+                window.location.href = "movie-list-customer.html";
+                return false;
+
+            }
+                 
+        }
+
+    </script>
+    <style>
+        body {
+            background-image: url("pvr3.jpg");
+            margin: 1px;
+        }
+
+        label {
+            color: white;
+        }
+
+        #rem {
+            margin-top: 12px;
+        }
+
+        .form {
+            width: 50%;
+            margin-left: 40%;
+            height: 50%;
+        }
+
+        .nav-tab {
+            background-color: black;
+            padding: 5px;
+            margin-left: 0px;
+            height: 40px;
+            width: 100%;
+            border: 2px solid white;
+        }
+
+        .tab {
+            padding: 12px;
+            width: 300px;
+            background-color: black;
+            color: white;
+            outline: none;
+            border: none;
+        }
+
+            .tab:hover {
+                background-color: red; /* Green */
+                color: white;
+                cursor: pointer;
+                outline: none;
+            }
+
+
+        input[type=submit] {
+            width: 40%;
+            padding: 12px 20px;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border-radius: 4px;
+            margin-top: 25px;
+        }
+
+        input[type=text], input[type=password], input[type=email], input[type=number] {
+            width: 40%;
+            padding: 12px 20px;
+            margin: 8px 0px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=reset] {
+            background-color: #FF6347;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 0px;
+            color: white;
+        }
+
+        #forgot-pass {
+            background-color: gray;
+            width: 300px;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        #psd {
+            float: right;
+            margin: 0px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="nav-tab">
+        <button class="tab" onclick="openCity('home')">Home</button>
+        <button class="tab" onclick="openCity('about')">About Us</button>
+        <button class="tab" onclick="openCity('login')">Login</button>
+        <button class="tab" onclick="openCity('register')">Register Now</button>
+        <button class="tab" onclick="openCity('contact')">Contact us</button>
+
+    </div>
+
+
+
+    <div id="home" class="movie" style="background-color:gray;">
+        <img style="padding:0px;margin:0px;" src="pvr2.png" width="100%" height="400px" ; />
+        <p style="font-size:20px;font-family:cambria;background-color:black;color:white;padding-left:10px;padding-right:10px;margin:2px;text-align: justify">
+            &ensp;&ensp;&ensp;&ensp;&ensp;PVR Ltd is a leading and premium Multiplex Cinema Exhibition company engaged in the business of Movie exhibition distribution & production and also earns revenue from in-house
+            advertisement sale of food & beverages gaming and restaurant business. The company pioneered the multiplex revolution in India by establishing the country's first multiplex cinema.
+            The company earns revenue from in-cinema advertisements/product displays and in-cinema sale of food and beverages. The company is the largest Multiplex Cinema operator by number of
+            screens in India.As on March 31 2018 PVR had three subsidiary companies namely PVR Pictures Limited PVR Lanka Limited and Zea Maize Private Limited. The company operates a film distribution
+            and production business through their subsidiary PVR Pictures which acquires and distributes Indian and international films.PVR Ltd was incorporated on April 26 1995 as Priya Village Roadshow
+            Ltd pursuant to a joint venture agreement between Priya Exhibitors Pvt Ltd and Village Roadshow Ltd. The company established the first Multiplex Cinema in India PVR Anupam in Saket New
+            Delhi in June 1997 .<br /><br />They computerized box office operations by selling computerized tickets.In January 2000 the company commenced single-screen cinema PVR Priya at Vasant Vihar New Delhi.
+            In April 2001 the company opened a four-screen Multiplex Cinema PVR Naraina in New Delhi and in November 2002 they opened a three-screen Multiplex Cinema PVR Vikaspuri in New Delhi.In the
+            year 2002 as a part of disinvestment Village Roadshow Ltd sold their entire shareholding to Priya Exhibitors Private Ltd. Hence the company changed their name from Priya Village Roadshow Ltd
+            to PVR Ltd with effect from June 28 2002.In March 2003 the India Advantage Fund-I managed by ICICI Venture Funds Management Company Ltd invested Rs. 380 million in the company by acquiring 38.45%
+            stake by way of purchase of equity shares from BIPL.In May 2003 the company opened a seven-screen Multiplex Cinema PVR Gurgaon at the Metropolitan mall Gurgaon Haryana.
+            In the year 2004 they opened India's largest Multiplex Cinema PVR Bangalore with eleven screens at the Forum mall Koramangla Bangalore. In May 2004 the company opened PVR Plaza a single-screen cinema with a heritage
+            ambience at Connaught Place New Delhi and in November 2004 they commenced operations at the first multiplex under the management fees/franchise model - PVR SRS a three screen Multiplex Cinema at
+            SRS mall Faridabad Haryana. In March 2005 the company opened their Multiplex Cinema PVR EDM a three-screen cinema at East Delhi Mall Uttar Pradesh.During the year 2005-06 the company commenced
+            operations at three new multiplex projects namely PVR Punjagutta - Hyderabad PVR Rivoli - Delhi and Spice PVR - Noida.
+
+            <br /><br />
+
+
+            PVR Pictures Ltd became 100% subsidiary of the company during the year.During the year the company made an initial public offering of 7700000 equity shares comprising a fresh issue of 5700000 equity
+            shares by the company and an offer for sale of 2000000 equity shares by The Western India Trustee and Executor Company Ltd. In January 4 2006 the company's shares were listed on the National Stock
+            Exchange and the Bombay Stock Exchange.During the year 2006-07 the company commenced commercial operations form seven new multiplex projects namely PVR Juhu Mumbai; PVR Indore PVR Lucknow PVR Mulund
+            Mumbai PVR Sahara Mall Gurgaon PVR Talkies Aurangabad and PVR Talkies Latur Also they acquired the entire shareholding of Sunrise Infotainment Pvt Ltd thereby making it as a wholly owned subsidiary
+            company.During the year the company launched a new brand of cinema called 'PVR Talkies' to cater the demand of the cinema viewing public in class B & C cities at a lower price range for an enhanced movie
+            viewing experience. They opened their PVR Talkies multiplexes at Aurangabad. The company entered into the business of Food Court by launching its first outlet at Sahara Mall Gurgaon Haryana by the name of
+            'PVR Food Union'.During the year 2007-08 the company commenced operations at four new multiplex projects thereby adding 16 new screens under operation. The company operates film distribution and production
+            business through its subsidiary PVR Pictures. is involved in production of Hindi films and distribution of Indian and international films. 'Taare Zameen Par' and 'Jaane Tu ya Jaane na' the first two co-production
+            movies of PVR Pictures released during the year. During the year the company introduced PVR Premiere brand with their first cinema at Select Citywalk Mall in Delhi. The company signed an MoU with Gyan Enterprises
+            Pvt Ltd to enter in to a joint venture through a special purpose vehicle namely Lite Bite Foods Pvt Ltd for the purpose of running managing and operating Food Courts Restaurants Pubs Coffee Shops etc.In March 28
+            2008 the company incorporated PVR bluO Entertainment Ltd as a subsidiary of the company pursuant to the joint venture with Major Cineplex Group for carrying out the activities of setting-up and running Bowling
+            Alleys Karaoke Centers and Ice Skating Rinks across India.During the year 2008-09 the company and their subsidiaries started commercial operations at Ambience Mall Ambience Food Court Chandigarh Phoenix Mills
+            Limited Mumbai and Oberoi Malls Mumbai. In May 2008 Sunrise Infotainment Pvt Ltd opened their multiplex and in December 26 2008 C R Retail Malls (India) Pvt Ltd opened a multiplex in Mumbai. PVR Pictures Ltd
+            the wholly owned subsidiary company co-produced a movie namely 'Jaane Tu Ya Jaane Na' with Amir Khan Production Pvt Ltd. In March 12 2009 PVR bluO opened their first and India's largest 24 lane Bowling Centre
+            with the brand name of 'blu-O' located at prestigious Ambience Mall in Gurgaon.The company filed a scheme of amalgamation entailing merger of Sunrise Infotainment Pvt Ltd a subsidiary company with the company
+            with the appointed date April 01 2008 and the Hon'ble Delhi High Court approved the merger on August 4 2009.During the year 2009-10 In order to grow the business of the company added 28 screens at 5 locations
+            i.e. Raipur Allahabad Ghaziabad Chennai and Ahmedabad. The company added 19 screens at 3 locations i.e. Chennai Ahmedabad and Lucknow in 2010-11.During the year 2013-14 the company approved the composite scheme
+            of amalgamation entailing merger of Cinemax India Ltd its five wholly owned subsidiaries namely Vista Entertainment Ltd Nikmo Entertainment Ltd Growel Entertainment Ltd Cinemax Motion Pictures Ltd and Odeon
+            Shrine Multiplex Ltd along with Cine Hospitality Pvt Ltd a whooly owned subsidiary of PVR Ltd.During the year 2014-15 the company has opened 9 new properties with 50 screens and currently operates a network
+            of 474 screens spread over 106 properties in 43 cities across the country.
+        </p>
+    </div>
+
+
+
+
+    <div id="about" class="movie" style="display:none;color:white;font-size:20px;text-align:justify;padding-left:10px;padding-right:10px;">
+
+        <br /><p>
+            PVR Ltd. is the market leader in terms of screen count in India. Since 1997, the brand has redefined the cinema industry and the way people watch movies in the country.
+            The Company has, over the years, consistently added screens, both organically and inorganically, through strategic investments and acquisitions which includes ‘Cinemax Cinemas’
+            in November 2012, ‘DT Cinemas’ in May 2016 and ‘SPI Cinemas’ in August 2018 which added 138 screens, 32 screens and 76 screens respectively to our screen network. Currently,
+            we operate 845 screens in 176 cinemas in 71 cities in India and Sri Lanka with an aggregate seating capacity of approximately 1.82 lakhs seats.<br /><br />
+
+            We offer a diversified cinema viewing experience through our formats, including ‘PVR Director’s Cut’, ‘PVR Gold Class’, ‘PVR IMAX’, ‘PVR Superplex’, ‘PVR P[XL]’, ‘PVR Playhouse’,
+            ‘PVR ECX’, ‘PVR Premiere’, ‘PVR ICON’, ‘PVR LUXE’, ‘PVR Cinemas’ and ‘PVR Utsav’, and pursuant to our acquisition and amalgamation of SPI Cinemas, ‘Escape’, ‘Sathyam’ and ‘Palazzo’.
+            The Company exhibits diversified content to serve different regional customer segments across India.<br /><br />
+
+            We have a diversified revenue stream and generate revenues primarily from box office and non-box office which primarily includes revenue from Sale of Food and Beverages, advertisement income,
+            convenience fees, and income from movie production/ distribution among others.
+        </p><br /><br />
+        <h3 style="color:yellow">COMPANY STRENGTHS</h3>
+        <ul type="square" style="font-size:20px;">
+
+            <li>Movie exhibition industry leader in India</li>
+            <li>Strategically located cinemas</li>
+            <li>Diversified product offerings and premium guest experience</li>
+            <li>Leadership across key operating metrics and robust financial position</li>
+            <li>Experienced Promoters, Key Managerial Personnel and senior management team with established track record</li>
+            <ul />
+    </div>
+
+
+
+    <div id="login" class="movie" style="display:none">
+        <form name="login" class="form" onsubmit="validateFormlogin();">
+            <br /><br /><br /><br />
+            <p style="color:white"><b>Login to a world of opportunities</b></p>
+            <div>
+                <label for="uname"><b>Username</b></label><br />
+                <input type="text" placeholder="Enter Username" name="uname" required><br /><br />
+
+                <label for="psw"><b>Password</b></label><br />
+                <input type="password" placeholder="Enter Password" name="psw" required><br />
+                <input type="submit" value="Login">  &ensp;<br />
+                <input type="checkbox" checked="checked" name="remember">
+                <label id="rem">Remember me</label>
+                <div id="forgot-pass">
+                    <input type="reset" id="cancelbtn" value="Cancel">
+                    <p id="psd">Forgot <a href="#">password</a></p>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+
+
+
+    <div id="register" class="movie" style="display:none">
+        <form name="register" class="form" onsubmit="validateFormregister();">
+            <p style="color:white"><b>register for cts career opportunities</b></p>
+            <div>
+                <label for="name"><b>Enter Name</b></label><br />
+                <input type="text" placeholder="Enter Name" id="name" pattern="[a-zA-z\s]+"   required><br /><br />
+
+                <label for="uname"><b>Enter User Name</b></label><br />
+                <input type="text" placeholder="Enter Name" id="uname" minlength="8" maxlength="20" pattern="[a-zA-z0-9]+"  required><br /><br />
+
+                <label for="password"><b>Enter Password</b></label><br />
+                <input type="password" placeholder="Enter Password" minlength="8" maxlength="20" id="password" name="psw" required><br /><br />
+
+                <p id="password-validate"></p>
+                <label for="psw"><b>Re-Enter Password</b></label><br />
+                <input type="password" placeholder="Re-type Password" id="confirm_password" name="rpsw" required><br /><br />
+
+                <label for="email"><b>Enter Email</b></label><br />
+                <input type="email" placeholder="Enter Email" name="email" required><br /><br />
+
+
+                <label for="city"><b>Enter City</b></label><br />
+                <input type="text" placeholder="Enter City" name="city" required><br /><br />
+
+                <input type="submit" value="Register">&ensp;
+
+            </div>
+        </form>
+    </div>
+
+
+    <script>
+      
+    </script>
+
+
+
+
+
+    <div id="contact" class="movie" style="display:none;font-size:25px;border:5px solid green;margin-left:25%;margin-top:80px;width:40%;padding-left:10%;height:70%;">
+        <p style="font-size:20px;color:yellow">
+            PVR Cinema Helpline Number: <br /><h1 style="color:violet">1800 203 6698</h1>
+        </p><br />
+
+        <p style="font-size:20px;color:white;">
+            Updated on Friday, 4 October 2020 - 5:37pm<br />
+            Company Logo<br />
+            Organization:  PVR Cinemas<br />
+            ALL INDIA NUMBER(S):<br />
+            088 00 900009<br />
+            0124 470 8100<br />
+            Website:  https://www.pvrcinemas.com<br />
+            Also See:<br />
+            Netflix Customer Care No. 000 800 040 1843<br />
+            ALT Balaji Customer Care<br />
+        </p>
+
+    </div>
+
+
+
+
+    <script>
+        function openCity(cityName) {
+            var i;
+            var x = document.getElementsByClassName("movie");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(cityName).style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

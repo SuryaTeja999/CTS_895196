@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Welcome to Cognizant</title>
+</head>
+<body style="border:2px solid black;width:60%">
+    <h1 style="padding-left:20px;margin-top:0px;">Personal Details</h1>
+    <table cellpadding="8px">
+        <tr>
+            <td><label for="name">Name</label></td>
+            <td><input type="text" name="name" id="name"></td>
+        </tr>
+        <tr>
+            <td><label for="Gender">Gender</label></td>
+            <td>
+                <label for="male">Male</label><input type="radio" name="gender" id="male">
+                <label for="female">Female</label><input type="radio" name="gender" id="female">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="Hometown">Hometown</label></td>
+            <td>
+                <select>
+                    <option value="newdelhi">New Delhi</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="kolkata">Kolkata</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="hyderabad">Hyderabad</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="Address">Address</label></td>
+            <td><textarea rows="5" cols="30" id="address"></textarea></td>
+        </tr>
+        <tr>
+            <td><label for="skills">Skills</label></td>
+            <td>
+                <label for="java">Java</label><input type="checkbox" name="skills" id="java" value="java">
+                <label for="HTML">HTML</label><input type="checkbox" name="skills" id="HTML" value="HTML">
+                <label for="oracle">Oracle</label><input type="checkbox" name="skills" id="oracle" value="Oracle">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="password">Password</label></td>
+            <td><input type="pwd" size="10" ="pass"></td>
+        </tr>
+    </table>
+    <input style="margin-left:10%"type="submit" value="submit"><br><br><br>
+</body>
+</html>

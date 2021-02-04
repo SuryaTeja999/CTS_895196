@@ -1,0 +1,159 @@
+﻿body {
+    width: 60%;
+    margin-left: 20%;
+    border: 5px solid #0000FF;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 5%;
+    background-color: pink;
+    overflow: hidden;
+}
+
+img {
+    border-radius: 2px;
+    padding-top: 10px;
+}
+
+#header {
+    background-color: #0000FF;
+    font-size: 20px;
+    position: fixed;
+    width: 60%;
+}
+
+
+#header-data {
+    font-size: 20px;
+    color: #FFFFFF;
+    float: left;
+    padding-left: 40px;
+}
+
+#footer {
+    background-color: #808080;
+    padding: 5px;
+}
+#foot-copy {
+    font-size: 20px;
+    padding-left: 40px;
+}
+
+#pages-title {
+    padding-left: 60px;
+    font-size: 25px;
+    margin-top: 120px;
+    color: #B10DC9;
+}
+
+#cust-notify {
+    color: #008900;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 20px;
+    text-align: center;
+}
+
+.main {
+    float: right;
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 20px;
+}
+
+#editmovie-table {
+    border: none;
+    margin-top: 0px;
+}
+
+
+#edit-title {
+    font-size: 25px;
+    margin-left: 65px;
+    margin-bottom: 0px;
+    color: #B10DC9;
+}
+
+.edit-form {
+    float: left;
+    font-size: 20px;
+    padding-right: 55px;
+}
+.edit-save {
+    padding-left: 65px;
+    font-size: 20px;
+    margin-top: 240px;
+    position: fixed;
+}
+#editmovie-teaser {
+    height: 20px;
+    width: 20px;
+    background-color: #000000;
+}
+#editmoviestatus-status {
+    color: #008900;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 250px;
+    margin-top: 0px;
+    padding-bottom: 150px;
+}
+.radio {
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+input[type="submit"] {
+    background-color: #0000FF;
+    padding: 10px;
+    color: #FFFFFF;
+    font-size: 15px;
+    width: 100px;
+}
+
+input[type="text"] {
+    height: 30px;
+}
+
+
+table, td, th {
+    border: none;
+}
+
+table {
+    padding: 60px;
+    padding-top: 30px;
+    width:100%;
+}
+
+th {
+    text-align: left;
+    color: #B10DC9;
+}
+
+td {
+    text-align: left;
+    color: #000000;
+}
+
+
+#fav-notify {
+    color: #008900;
+    font-size: 20px;
+    padding-left: 250px;
+    font-weight: bold;
+}
+
+#fav-link {
+    color: #0000FF;
+}
+
+#fav-emp {
+    padding-left: 100px;
+    padding-bottom: 150px;
+    font-size: 20px;
+    color: #808080;
+}
+#no-fav {
+    padding-left: 60px;
+}

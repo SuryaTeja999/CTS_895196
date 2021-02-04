@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset=utf-8 />
+<title>Return first and last name from a form -    </title>
+</head>
+<body style="border:2px solid black;padding:15px;width:25%">
+<script>
+function getFormValue() 
+{
+ var r=document.getElementById("radius").value;
+ var volume=(4/3)*(22/7)*r*r*r;
+ document.getElementById("volume").value=volume;    
+}
+</script>
+<p>Input Radius value and get volume of sphere</p>
+<form id="form1" onsubmit="getFormValue()">
+Radius <br><input type="text" name="radius" id="radius" value=""><br>
+Volume <br><input type="text" name="volume" id="volume" value="0.00000"><br><br>
+<input type="BUTTON" value="Calculate" onclick="getFormValue()">
+</form>
+</body>
+</html>

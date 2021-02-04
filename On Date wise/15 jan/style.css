@@ -1,0 +1,24 @@
+#image
+{
+width:200px;
+height:200px;
+}
+a{
+  color: brown;
+}
+a:visited
+{
+color:green;
+}
+a:hover {
+  color: orange;
+}
+.p1,.p2
+{
+color:brown;
+font-style:italic;
+}
+.p2
+{
+text-decoration:underline;
+}

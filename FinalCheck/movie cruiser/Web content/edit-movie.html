@@ -1,0 +1,63 @@
+﻿<html>
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <title>Edit Movie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body onload=form_edit();>
+    <header id="header">
+        <p id="header-data">Movie Cruiser</p>&ensp;&ensp;
+        <img src="https://th.bing.com/th/id/OIP.wjHw2tzPXLDLICbW8Jv20AAAAA?w=87&h=180&c=7&o=5&dpr=1.25&pid=1.7" width="30" height="40">
+        <a class="main" href="movie-list-admin.html">Movies</a>
+        <br /><br />
+    </header><br><br /><br /><br /><br />
+    <p id="edit-title">Edit Movie</p>
+    <table id="editmovie-table">
+    <td class="edit-form">
+        <form name="myForm" action="edit-movie-status.html" onsubmit="return validateForm()" >
+            <label for="title1"><b>Title</b></label><br /><br />
+            <input id="title1" height="5%" type="text" value="" size=80 name="title">
+    </td>
+    <br>
+
+    <tr>
+    <td class="edit-form">
+        <label for="gross"><b>Gross($)</b></label><br /><br />
+        <input type="text" id="gross" value="" required name="gross">
+    </td>
+
+    <td class="edit-form">
+        <label for="active"><b>Active</b></label><br /><br />
+        <input class="radio" id="active1" type="radio" checked name="active">
+        <label for="yes">Yes</label>
+        <input class="radio" id="active2" type="radio" name="active">
+        <label for="active2">No</label>
+    </td>
+
+    <td class="edit-form">
+        <label for="launch"><b>Date of Launch</b></label><br /><br />
+        <input type="text" value="" name="launch" required id="launch">
+    </td>
+
+    <td class="edit-form" rowspan="2">
+        <label for="genre"><b>Genre</b></label><br /><br />
+        <select id="genre" size="6">
+            <option>Super hero</option>
+            <option>Science Fiction</option>
+            <option>Romance</option>
+            <option>Comedy</option>
+            <option>Adventure</option>
+            <option>Thriller</option>
+        </select>
+    </td></tr>
+        <p class="edit-save">
+        <input id="editmovie-teaser" type="checkbox" name="teaser" checked>
+        <label for="editmovie-teaser"><b>Has Teaser</b></label><br /><br />
+        <input type="submit" value="Save">
+    </p>
+      </table>
+    </form><br /><br /><br />
+    <footer id="footer"><p id="foot-copy">Copyright &#169; 2019</p></footer>
+</body>
+</html>
