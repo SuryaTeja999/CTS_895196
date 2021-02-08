@@ -11,7 +11,7 @@ Course_duration INT,
 No_of_participants INT, 
 Course_type CHAR(3)
 )
- 
+Â 
 CREATE TABLE Student_Info
 (
 Student_id VARCHAR(10) PRIMARY KEY,
@@ -248,7 +248,7 @@ SELECT AVG(SPECIAL_FEES)
 
 Solution 3 :
 SELECT COURSE_NAME,
-TO_DAYS(get_date() AS Date)–TO_DAYS(course_start_date) 
+TO_DAYS(get_date() AS Date)â€“TO_DAYS(course_start_date) 
 FROM COURSE_INFO 
 
 Solution 4 :

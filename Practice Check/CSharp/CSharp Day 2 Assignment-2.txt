@@ -1,0 +1,196 @@
+//1.  Sum and Average Elements Of an Array
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Surya_Project
+{
+    class SumAvgArray
+    {
+        static void Main()
+        {
+            int sum = 0, n;
+            Console.WriteLine("Enter Size Of an Array");
+            n = Convert.ToByte(Console.ReadLine());
+            int[] num = new int[n];
+            Console.WriteLine("Enter Numbers");
+            for (int i = 0; i < n; i++)
+            {
+                num[i] = Convert.ToByte(Console.ReadLine());
+                sum += num[i];
+
+            }
+            Console.WriteLine("The Sum Of {0} Numbers is {1}", n, sum);
+            Console.WriteLine("The Average Of {0} Numbers is {1}", n, (float)sum / n);
+        }
+      
+    }
+}
+
+
+
+// 2. Sum Of 3/3 matrices
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Surya_Project
+{
+    class MatrixSum
+    {
+        static void Main()
+        {
+            int sum = 0,i,j;
+            int[,] num = new int[3, 3];
+            Console.WriteLine("Enter Numbers");
+            for (i = 0; i < 3; i++)
+            {
+                for (j = 0; j < 3; j++)
+                {
+                    num[i, j] = Convert.ToInt16(Console.ReadLine());
+                }
+            }
+            for (i = 0; i < 3; i++)
+            {
+                for (j = 0; j < 3; j++)
+                {
+                    sum += num[i, j];
+                }
+            }
+            Console.WriteLine("The Sum Of Numbers is {0} ",sum);
+        }
+
+    }
+}
+
+
+
+//3.  Max Element Of Integer Array
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Surya_Project
+{
+    class IntegerArrayMaxElement
+    {
+        static void Main()
+        {
+            int  n,max=0;
+            Console.WriteLine("Enter Size Of an Array");
+            n = Convert.ToByte(Console.ReadLine());
+            int[] num = new int[n];
+            Console.WriteLine("Enter Numbers");
+            for (int i = 0; i < n; i++)
+            {
+                num[i] = Convert.ToByte(Console.ReadLine());
+                if(num[i]>max)
+                {
+                    max = num[i]
+;                }
+
+            }
+            Console.WriteLine("The Maximum Element Of integer Array is {0}",max);
+        }
+
+    }
+}
+
+
+// 4. Sum of matrix Elements Column wise
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Surya_Project
+{
+    class ColumnSumOfMatrix
+    {
+        static void Main()
+        {
+            int colsum, i, j;
+            int[,] num = new int[3, 3];
+            Console.WriteLine("Enter Numbers for 2d array");
+            for (i = 0; i < 3; i++)
+            {
+                for (j = 0; j < 3; j++)
+                {
+                    num[i, j] = Convert.ToInt16(Console.ReadLine());
+                }
+            }
+            for (i = 0; i < 3; i++)
+            {
+                colsum = 0;
+                for (j = 0; j < 3; j++)
+                {
+                    colsum += num[j, i];
+                }
+                Console.WriteLine("The Sum Of {0} column is {1} ", i, colsum);
+            }
+
+        }
+
+    }
+}
+
+
+//5.  Sum Of Matrix Elements Row Wise
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Surya_Project
+{
+    class RowSumOfMatrix
+    {
+        static void Main()
+        {
+            int rowsum, i, j;
+            int[,] num = new int[3, 3];
+            Console.WriteLine("Enter Numbers for 2d array");
+            for (i = 0; i < 3; i++)
+            {
+                for (j = 0; j < 3; j++)
+                {
+                    num[i, j] = Convert.ToInt16(Console.ReadLine());
+                }
+            }
+            for (i = 0; i < 3; i++)
+            {
+                rowsum = 0;
+                for (j = 0; j < 3; j++)
+                {
+                    rowsum += num[i, j];
+                }
+                Console.WriteLine("The Sum Of {0} row is {1} ", i,rowsum);
+            }
+           
+        }
+
+    }
+}
+
+
+
+

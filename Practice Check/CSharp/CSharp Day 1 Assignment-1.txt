@@ -1,0 +1,162 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Surya_Project
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // declare variable and initialze int 
+
+            int x = 10;
+            int y = 20;
+            int z = 30;
+
+            // Multiplying Numbers
+
+            Console.WriteLine("Multiplication of three Numbers");
+            Console.WriteLine("Product of {0} ,{1} , {2} is {3}", x, y, z, (x * y * z));
+            Console.WriteLine("\n");
+            Console.WriteLine("\n");
+
+            // Display Ajay Details
+
+            int salary = 25000;
+            int id = 101;
+            String location = "Delhi";
+            String a = "ABC";
+            Console.WriteLine("Welcome Ajay! Your details are as follows");
+            Console.WriteLine("Your Id :" + id);
+            Console.WriteLine("Your Address : {0} , {1} ", a, location);
+            Console.WriteLine("Your Salary :" + salary);
+            Console.WriteLine("\n");
+            Console.WriteLine("\n");
+
+
+            // Adding Numbers
+
+            Console.WriteLine("Addition Of three Numbers");
+            Console.WriteLine("Sum of x , y , z is " + (x + y + z));
+            Console.WriteLine("\n");
+            Console.WriteLine("\n");
+
+
+
+            //  Display Sum & Average Of First 20 numbers
+
+            int i=0,sum=0;
+            for(i=1;i<=20;i++)
+            {
+                sum += i;
+                if (i== 20)
+
+                    {
+                        Console.WriteLine("Sum Of First 20 Numbers is : {0} ",sum);
+                    Console.WriteLine("Average Of First 20 Numbers is : {0} ", sum / 20);
+                    }
+            }
+            Console.WriteLine("\n");
+            Console.WriteLine("\n");
+
+
+            //  Display First Fifty Even Numbers
+            int count=0;
+            Console.WriteLine("First Fifty Even Numbers Are :");
+            for(i=2;;i+=2)
+            {
+                count++;
+                Console.Write(i+" ");
+                if (count == 50)
+                {
+                    Console.WriteLine("\n");
+                    break;
+
+                }
+             }
+            Console.WriteLine("\n");
+            
+
+
+
+            //Test Whether given number is prime or not
+
+            int prime,j=0,counting=0;
+            prime = Convert.ToInt16(Console.ReadLine());     
+                for (j=2;j<=prime;j++)
+                {
+                    
+                    if(prime%j==0)
+                    {
+                        counting++;
+                    }
+                }
+                if(counting==1)
+                {
+                    Console.WriteLine("The number {0} is a Prime Number ", prime);
+                }
+                else
+            {
+                Console.WriteLine("The number {0} is Not a Prime Number ", prime);
+            }
+
+            Console.WriteLine("\n");
+            Console.WriteLine("\n");
+
+
+
+            //Write  a table for the given Number
+
+
+            int table;
+            table = Convert.ToInt16(Console.ReadLine());
+            for (i = 1; i <= 10; i++)
+            {
+                Console.WriteLine("{0} * {1} = {2}", table, i, table * i);
+
+            }
+            Console.WriteLine("\n");
+            Console.WriteLine("\n");
+
+
+
+
+            //Test reading input from console with int16,int32,byte
+
+
+            int integer16, integer32,bytedata;
+            integer16 = Convert.ToInt16(Console.ReadLine());
+            integer32 = Convert.ToInt32(Console.ReadLine());
+            bytedata = Convert.ToByte(Console.ReadLine());
+            Console.WriteLine("Integer 16 is {0},Integer 32 is {1},Bytedata Is {2}", integer16, integer32, bytedata);
+
+
+
+
+        }
+    }
+
+}
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

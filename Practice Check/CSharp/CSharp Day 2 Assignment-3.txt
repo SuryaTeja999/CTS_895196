@@ -1,0 +1,173 @@
+// 1.  program in C# Sharp to count a total number of duplicate elements in an array
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Surya_Project
+{
+    class CountArrayDuplicates
+    {
+
+        static void Main()
+        {
+            int n,i,j,count,duplicatecount=0;
+            Console.WriteLine("Enter Size Of an Array");
+            n = Convert.ToByte(Console.ReadLine());
+            int[] num = new int[n];
+            Console.WriteLine("Enter Numbers");
+            for (i = 0; i < n; i++)
+            {
+                num[i] = Convert.ToByte(Console.ReadLine());
+            }
+            Console.WriteLine("Duplicates are:\n");
+            for (i=0;i<n;i++)
+            {
+                count = 0;
+                for(j=i+1;j<n;j++)
+                {
+                    if(num[i]==num[j] && num[i]!=0 && num[j]!=0)
+                    {
+                       num[j] = 0;
+                        count++;
+                    }
+                }
+                if(count!=0)
+                {
+                    
+                    Console.WriteLine("For {0} :: {1} duplicates found ", num[i], count);
+                    duplicatecount++;
+                }
+             
+            }
+            if (duplicatecount != 0)
+            {
+                Console.WriteLine("\n");
+                Console.WriteLine("Total Number of Array Duplicates are:{0}", duplicatecount);
+            }
+            else
+            {
+                Console.WriteLine("\n");
+                Console.WriteLine("Sorry! No Duplicates Found");
+            }
+        }
+
+    }
+}
+
+
+//  2.  WAP to find the eligibility of admission for a professional courseusing System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Surya_Project
+{
+    class ProfAdmission
+    {
+
+        static void Main()
+        {
+            int phy, che, math, total, total1;
+            Console.WriteLine("Input the marks obtained in Physics");
+            phy = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine("Input the marks obtained in Chemistry");
+            che = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine("Input the marks obtained in Maths");
+            math = Convert.ToInt16(Console.ReadLine());
+            total = math + che + phy;
+            total1 = math + phy;
+            Console.WriteLine("Your Total in all Subjects is {0}",total);
+            if (che>=50 && math>= 65 && phy>=55)
+            {
+                if(total>=180)
+                {
+                    Console.WriteLine("The Candidate is Eligible for the Admission");
+                }
+                else
+                {
+                    Console.WriteLine("Sorry !The Candidate is Not Eligible for the Admission");
+                }
+
+            }
+            if (total1 >= 140)
+            {
+                Console.WriteLine("The Candidate is Eligible for the Admission");
+            }
+            else
+            {
+                Console.WriteLine("Sorry !The Candidate is Not Eligible for the Admission");
+            }
+
+        }
+
+    }
+}
+
+
+
+//3. Write a program in C# Sharp to calculate and print the Electricity bill of a given customer. The customer id., name and unit 
+consumed by the user should be taken from the keyboard and display the total amount to pay to the customer.
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Surya_Project
+{
+    class ElectricityBill
+    {
+        static void Main()
+        {
+            int cid, unit;
+            String name;
+            double rate=0.0,total,surcharge=0.0,net;
+            cid = Convert.ToInt16(Console.ReadLine());
+            name = Console.ReadLine();
+            unit = Convert.ToInt16(Console.ReadLine());
+            if (unit <= 199)
+            {
+                rate = 1.20;
+            }
+            if(unit < 400 && unit >= 200)
+            {
+                rate = 1.50;
+            }
+            if (unit < 600 && unit >= 400)
+            {
+                rate = 1.80;
+            }
+            if (unit >= 600)
+            {
+                rate = 2.00;
+            }
+            Console.WriteLine("Customer IDNO :{0}", cid);
+            Console.WriteLine("Customer Name :{0}", name);
+            Console.WriteLine("Unit Consumed :{0}", unit);
+            total = unit * rate;
+            if (total > 400)
+            {
+                surcharge = (15 * total) / 100;
+            }
+            if(total<=100)
+            {
+                total = 100;
+            }
+            Console.WriteLine("Amount Charges @Rs. {0} per unit : {1}", rate, total);
+            Console.WriteLine("Surcharge Amount : {0}",surcharge);
+            net = surcharge + total;
+            Console.WriteLine("Net Amount Paid By the Customer : {0}", net);
+
+
+        }
+    }
+}
+
