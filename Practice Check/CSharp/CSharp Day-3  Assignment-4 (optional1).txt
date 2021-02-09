@@ -1,0 +1,95 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Surya_Project
+{
+    class Company
+    {
+        static void Main()
+        {
+            double  j, k, sal, total, l;
+
+            Employee[] emp = new Employee[5];
+         
+    
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Enter Employee {0} Details in order id,name,dept,manager,sal,exp", i);
+                emp[i] = new Employee();
+                emp[i].Empid = Convert.ToInt32(Console.ReadLine());
+                emp[i].Name = Console.ReadLine();
+                emp[i].Department = Console.ReadLine();
+                emp[i].Manager = Console.ReadLine();
+                emp[i].basicsalary = Convert.ToInt32(Console.ReadLine());
+                emp[i].experience = Convert.ToInt32(Console.ReadLine());
+                emp[i].NetSalary(emp[i].experience);
+                Console.WriteLine("The Details are " +
+                    "\n Employee Id:{0} " +
+                    "\n Employee Name:{1} " +
+                    " \n Employee Department:{2} " +
+                    "\n Employee Manager:{3} " +
+                    "\n Employee basicsalary:{4} " +
+                    "\n Employee Experience:{5}", emp[i].Empid, emp[i].Name, emp[i].Department, emp[i].Manager, emp[i].basicsalary, emp[i].experience);
+                l = emp[i].DA;
+                j = emp[i].HRA;
+                k = emp[i].PF;
+                sal = emp[i].basicsalary;
+                Console.WriteLine(" Your rate in DA Is {0} ,HRA is {1} ,PF is {2}", l, j, k);
+                total = ((l * sal) / 100) + ((j * sal) / 100) + k;
+                Console.WriteLine(" Your Net Salary is:{0}", total);
+                Console.WriteLine("\n");
+            }
+        }
+           
+        
+    }
+
+    class Employee
+    {
+        public int Empid;
+        public double DA, HRA, PF;
+        public String Name;
+        public String Department;
+        public String Manager;
+        public int basicsalary;
+        public int experience;
+           
+        
+        public void NetSalary(int exp)
+        {
+      
+            if (exp > 10)
+            {
+                DA = 10;
+                HRA = 8.5;
+                PF = 6200;
+
+            }
+            if (exp > 7 && exp < 10)
+            {
+                DA = 7;
+                HRA = 6.5;
+                PF = 4100;
+            }
+            if (exp > 5 && exp < 7)
+            {
+                DA = 4.1;
+                HRA = 3.8;
+                PF = 1800;
+
+            }
+            if (exp < 5)
+            {
+                DA = 1.9;
+                HRA = 2.0;
+                PF = 1200;
+            }
+
+        }
+
+    }
+
+}
