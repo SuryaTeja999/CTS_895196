@@ -1,0 +1,104 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Surya_Project
+{
+    class Employees
+    {
+
+        int Empid;
+        public double DA, HRA, PF;
+        String Name;
+        String Department;
+        String Manager;
+        public int basicsalary;
+        public int experience;
+        public void EmployeeDetails()
+        {
+            Empid = Convert.ToInt32(Console.ReadLine());
+            Name = Console.ReadLine();
+            Department = Console.ReadLine();
+            Manager = Console.ReadLine();
+            basicsalary = Convert.ToInt32(Console.ReadLine());
+            experience = Convert.ToInt32(Console.ReadLine());
+        }
+
+        public void DisplayDetails()
+        {
+           
+            Console.WriteLine("The Details are " +
+                     "\n Employee Id:{0} " +
+                     "\n Employee Name:{1} " +
+                     " \n Employee Department:{2} " +
+                     "\n Employee Manager:{3} " +
+                     "\n Employee basicsalary:{4} " +
+                     "\n Employee Experience:{5}", Empid,
+                     Name, Department, Manager, basicsalary, experience);
+        }
+
+        public void NetSalary(int exp)
+        {
+
+            if (exp > 10)
+            {
+                DA = 10;
+                HRA = 8.5;
+                PF = 6200;
+
+            }
+            if (exp > 7 && exp < 10)
+            {
+                DA = 7;
+                HRA = 6.5;
+                PF = 4100;
+            }
+            if (exp > 5 && exp < 7)
+            {
+                DA = 4.1;
+                HRA = 3.8;
+                PF = 1800;
+
+            }
+            if (exp < 5)
+            {
+                DA = 1.9;
+                HRA = 2.0;
+                PF = 1200;
+            }
+
+        }
+
+
+    }
+
+    class EmployeeClass
+    {
+        static void Main()
+        {
+            double sal, total;
+            Employees[] emp = new Employees[5];
+            for (int i = 0; i < 5; i++)
+            {
+                emp[i] = new Employees1();
+                emp[i].EmployeeDetails();
+                emp[i].DisplayDetails();
+                emp[i].NetSalary(emp[i].experience);
+                sal = emp[i].basicsalary;
+                Console.WriteLine(" Your rate in DA Is {0} ,HRA is {1} ,PF is {2}", emp[i].DA, emp[i].HRA,emp[i].PF);
+                total = (((emp[i].DA) * sal) / 100) + (((emp[i].HRA) * sal) / 100) - emp[i].PF;
+                Console.WriteLine(" Your Net Salary is:{0}", total);
+                Console.WriteLine("\n");
+            }
+        }
+    }
+
+}
+
+
+
+
+
+

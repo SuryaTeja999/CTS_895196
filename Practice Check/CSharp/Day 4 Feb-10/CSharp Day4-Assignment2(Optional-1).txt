@@ -1,0 +1,93 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Surya_Project
+{
+    class Product
+    {
+        
+        public int pcode;
+        public String cpname;
+        public String pname;
+        public int pprice;
+        public int qty_in_stock;
+        public readonly int discount_allowed = 50;
+        public static String brand="TATA";
+        public double total;
+
+        public void pdetails()
+        {
+            pcode=Convert.ToInt32(Console.ReadLine());
+            pname= (Console.ReadLine());
+            pprice= Convert.ToInt32(Console.ReadLine());
+            qty_in_stock = Convert.ToInt32(Console.ReadLine());
+            //discount_allowed= Convert.ToInt32(Console.ReadLine());
+        }
+        public void Calamount(int qty, String cpname, int discount_allowed,int pprice)
+        {
+            double discount,net;
+            total = qty * pprice;
+            Console.WriteLine("The 1 product price is {0}", pprice);
+            Console.WriteLine("The quantity of  products ordered is {0}", qty);
+            Console.WriteLine("The total Amount is: {0}",total);
+            discount = ((total * discount_allowed) / 100);
+            Console.WriteLine("The Discount is: {0}", discount);
+            net = total - discount;
+            bill(cpname, net);
+
+        }
+       public void bill(String cpname, double net)
+        {
+            Console.WriteLine("\n");
+            Console.WriteLine("Your Bill for  product is");
+            Console.WriteLine("Total Amount for product {0} is {1}", cpname, net);
+
+        }
+    }
+
+
+
+
+    class ClassProduct
+    {
+        static void Main()
+        {
+            int i,id=11;
+            String cpname;
+            int qty;
+            Product[] prod = new Product[10];
+            for (i = 0; i <=1; i++)
+            {
+                Console.WriteLine("Enter Product {0} details in order pcode,pname,pprice,qty ", i);
+                prod[i] = new Product();
+                prod[i].pdetails();
+            }
+            Console.WriteLine("\n");
+            Console.WriteLine("Enter product");
+            cpname = (Console.ReadLine());
+            Console.WriteLine("Enter Quantity");
+            qty = Convert.ToInt32(Console.ReadLine());
+            for (i = 0; i<=1; i++)
+            {
+               
+                if (prod[i].pname == cpname)
+                { 
+                    id = i;
+                }
+
+            }
+            if (id == 11)
+            {
+                Console.WriteLine("No product found");
+            }
+            else
+            { 
+                prod[id].Calamount(qty, cpname, prod[id].discount_allowed, prod[id].pprice);
+            }
+
+        }
+    }
+}
