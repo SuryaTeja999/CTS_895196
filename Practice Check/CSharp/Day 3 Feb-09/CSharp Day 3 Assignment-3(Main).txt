@@ -1,0 +1,115 @@
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Surya_Project
+{
+    class Employeecount
+    {
+        int Empid;
+        string name;
+        String dept;
+        String Manager;
+        double BasicSalary;
+        int Exp;
+        double DA, HRA, PF, NetSalary;
+        String Address;
+        String CompanyName;
+        public Employeecount()
+        {
+            CompanyName = "Tata";   
+        }
+        public void GetEmployeeDetails()
+        {
+            Console.WriteLine("Enter Employee ID");
+            Empid = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Name of the employee");
+            name = Console.ReadLine();
+            Console.WriteLine("Enter Department name");
+            dept = Console.ReadLine();
+            Console.WriteLine("Enter Manager name");
+            Manager = Console.ReadLine();
+            Console.WriteLine("Enter Basic Salary");
+            BasicSalary = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Experience of the employee");
+            Exp = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Address");
+            Address= Console.ReadLine();
+        }
+        public void CalculateNetsalary()
+        {
+            if (Exp <= 5)
+            {
+                DA = (1.9 * BasicSalary) / 100;
+                HRA = (2.0 * BasicSalary) / 100;
+                PF = 1200;
+            }
+            else if (Exp > 5 && Exp <= 7)
+            {
+                DA = (4.1 * BasicSalary) / 100;
+                HRA = (3.8 * BasicSalary) / 100;
+                PF = 1800;
+            }
+            else if (Exp > 7 && Exp <= 10)
+            {
+                DA = (7 * BasicSalary) / 100;
+                HRA = (6.5 * BasicSalary) / 100;
+                PF = 4100;
+            }
+            else if (Exp > 10)
+            {
+                DA = (10 * BasicSalary) / 100;
+                HRA = (8.5 * BasicSalary) / 100;
+                PF = 6200;
+            }
+
+            NetSalary = (BasicSalary + DA + HRA) - PF;
+        }
+        public void DisplayEmployeeDetails()
+
+        {
+            Console.WriteLine("Employee ID : " + Empid);
+            Console.WriteLine("Employee Name : " + name);
+            Console.WriteLine("Basic Salary is" + BasicSalary);
+            Console.WriteLine("DA is" + DA);
+            Console.WriteLine("HRA is" + HRA);
+            Console.WriteLine("PF is" + PF);
+            Console.WriteLine("Address is" + Address);
+            Console.WriteLine("Company Name is: {0}", CompanyName);
+            Console.WriteLine("Net salary is" +NetSalary);
+        }
+
+    }
+
+
+
+
+    class Employeecountmain
+    {
+        static void Main()
+        {
+            int j=0,tobreak;
+            List<Employeecount> list = new List<Employeecount>();
+            Employeecount[] emp = new Employeecount[3000];
+            for (int i = 0; ; i++)
+            {
+                j++;
+                emp[i] = new Employeecount();
+                list.Add(emp[i]);
+                emp[i].GetEmployeeDetails();
+                emp[i].CalculateNetsalary();
+                emp[i].DisplayEmployeeDetails();
+                Console.WriteLine("Press 1 for exit....press any number for adding employee");
+                tobreak = Convert.ToInt32(Console.ReadLine());
+                if (tobreak == 1)
+                {
+                    break;
+                }
+            }
+            Console.WriteLine("The Number of Employess added are :{0}", j);
+        }
+    }
+}

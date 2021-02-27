@@ -1,0 +1,2 @@
+E:\895196\Practice Check\CSharp Final Check\Csharpproject\Csharpproject\obj\Debug\Csharpproject.csprojAssemblyReference.cache
+E:\895196\Practice Check\CSharp Final Check\Csharpproject\Csharpproject\obj\Debug\Csharpproject.csproj.CoreCompileInputs.cache

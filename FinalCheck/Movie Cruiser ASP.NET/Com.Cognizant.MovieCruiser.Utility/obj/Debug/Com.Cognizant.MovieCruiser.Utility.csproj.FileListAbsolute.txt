@@ -1,0 +1,5 @@
+E:\895196\Movie Cruiser ASP.NET\Com.Cognizant.MovieCruiser.Utility\bin\Debug\Com.Cognizant.MovieCruiser.Utility.dll
+E:\895196\Movie Cruiser ASP.NET\Com.Cognizant.MovieCruiser.Utility\bin\Debug\Com.Cognizant.MovieCruiser.Utility.pdb
+E:\895196\Movie Cruiser ASP.NET\Com.Cognizant.MovieCruiser.Utility\obj\Debug\Com.Cognizant.MovieCruiser.Utility.csproj.CoreCompileInputs.cache
+E:\895196\Movie Cruiser ASP.NET\Com.Cognizant.MovieCruiser.Utility\obj\Debug\Com.Cognizant.MovieCruiser.Utility.dll
+E:\895196\Movie Cruiser ASP.NET\Com.Cognizant.MovieCruiser.Utility\obj\Debug\Com.Cognizant.MovieCruiser.Utility.pdb

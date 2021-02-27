@@ -1,0 +1,73 @@
+﻿body {
+    font-size: 18px;
+    background-color: pink;
+    border-style: solid;
+    border-width: 5px;
+    margin: 50px 0 0 15%;
+    width: 60%;
+}
+#loginForm {
+    border-style: solid; 
+    padding: 50px;
+    border-width: 5px;
+    margin: 20% 0 0 30%;
+    width: 40%;
+    height: 30%;
+    background-color: black;
+    font-size:16px;
+    color:white;
+}
+#labelGenre {
+    float: left;
+    margin: 0px 0px 0px 55px;
+}
+#txtMovieGenre {
+    float: left;
+    margin: 0px 10px 0px 55px;
+}
+
+h2 {
+    padding: 50px 0 10px 35px;
+    margin: 0px
+}
+#header {
+    margin-bottom: 0px;
+    height: 70px;
+    background-color: #0000FF;
+}
+#footer {
+    padding-left: 50px;
+    height: 70px;
+    background-color: gray;
+}
+
+#footerlabel {
+    font-size: 25px;
+}
+.CustomerLink {
+    float: right;
+    font-size: 20px;
+    padding-right: 25px;
+}
+#form {
+    background-color: white;
+    height: 90%;
+}
+
+.edittitle {
+    margin: 35px;
+}
+
+.formelements {
+    float: left;
+    margin: 0 35px 0px 35px;
+}
+
+h3 {
+    padding: 50px 0 10px 45px;
+    margin: 0px;
+}
+#Image {
+    float: left;
+    padding-left: 20px;
+}

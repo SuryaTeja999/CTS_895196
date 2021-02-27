@@ -1,0 +1,26 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMaster.master.cs" Inherits="MovieCruiserProject.AdminMaster" %>
+<%@ Register Src="~/Header.ascx" TagPrefix="h1" TagName="header"%>
+<%@ Register Src="~/footer.ascx" TagPrefix="f1" TagName="footer"%>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <form id="form" runat="server" >
+        <div id="header">
+            <br />
+            <h1:header runat="server"></h1:header> 
+            <asp:Image ID="Image"  ImageUrl="https://th.bing.com/th/id/OIP.wjHw2tzPXLDLICbW8Jv20AAAAA?w=87&amp;h=180&amp;c=7&amp;o=5&amp;dpr=1.25&amp;pid=1.7" Width="30px" ImageAlign="Right" style="float:left;padding-left:20px;" runat="server" Height="40px"/> 
+        <asp:HyperLink runat="server"  NavigateUrl="ViewAdminMovies.aspx" Text="Movies"  ForeColor="White" style="float:right;font-size:25px;padding-right:25px;"></asp:HyperLink>
+       <asp:HyperLink runat="server"  NavigateUrl="Login.aspx" Text="Change User"  ForeColor="White" style="float:right;font-size:25px;padding-right:25px;"></asp:HyperLink>
+        </div>
+        <asp:ContentPlaceHolder  ID="administratorContent"  runat="server">
+        </asp:ContentPlaceHolder>
+          <div ID="footer" >
+              <br />
+        <f1:footer runat="server"></f1:footer>
+     </div>
+   </form>
+</body>
+</html>
